@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2747251654051910846}
   m_Layer: 0
   m_Name: Car_Blue
-  m_TagString: Untagged
+  m_TagString: CarBlue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,7 +98,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
-  right: 
+  redLight: {fileID: 0}
+  tilDirections: {fileID: 0}
+  goalPoint: {fileID: 0}
+  winGame: {fileID: 0}
+  textScore: {fileID: 0}
+  carPoint: 1
+  score: 0
   onRed: 0
 --- !u!50 &2747251654051910847
 Rigidbody2D:
@@ -134,7 +140,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.04127395, y: -0.01639998}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -145,5 +151,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.68, y: 1.03}
+  m_Size: {x: 1.5974519, y: 0.86599946}
   m_EdgeRadius: 0

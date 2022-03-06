@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7924158670482776049}
   m_Layer: 0
   m_Name: Car_Green
-  m_TagString: Untagged
+  m_TagString: CarGreen
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7924158670482776048}
-  m_LocalRotation: {x: -0, y: -0, z: -0.7082084, w: 0.7060035}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7082105, w: 0.7060014}
   m_LocalPosition: {x: -0.4, y: 5.46, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -98,7 +98,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
-  right: 
+  redLight: {fileID: 0}
+  tilDirections: {fileID: 0}
+  goalPoint: {fileID: 0}
+  winGame: {fileID: 0}
+  textScore: {fileID: 0}
+  carPoint: 1
+  score: 0
   onRed: 0
 --- !u!50 &7924158670482776050
 Rigidbody2D:

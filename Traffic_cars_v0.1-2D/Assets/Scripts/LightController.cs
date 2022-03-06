@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LightController : MonoBehaviour
 {
-    public GameObject redLight;
+    public GameObject[] redLights;
     public bool isOn;
     [SerializeField]
     private float timerSpeed = 1f; // TRY A NEW TIMER
@@ -13,49 +13,51 @@ public class LightController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        redLight = GameObject.Find("RedLight");
-        Debug.Log("RED LIGHT: " + redLight);
+        redLights = GameObject.FindGameObjectsWithTag("RedLight");
+        //Debug.Log("RED LIGHT: " + redLights.Length);
         isOn = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //StartCoroutine(dynamicLightOn());
-        //redLight.SetActive(true);
-
-            elapsed += Time.deltaTime;
-            if (elapsed >= timerSpeed)
-            {
-               
-                elapsed = 0f;
-                DynamicLight(isOn);
-                isOn = false;
-                Debug.Log("Timer reset inside" + isOn);
-            }
-
-
+        // TIMER      
+        elapsed += Time.deltaTime;
+        if (elapsed >= timerSpeed)
+        {
+            elapsed = 0f;
+            DynamicLight(isOn);
+            isOn = false;
+            Debug.Log("Timer reset inside" + isOn);
+         
+        }
 
     }
+    // TURNING ON/OFF DYNAMIC
     void DynamicLight(bool isOn)
     {
         if (!isOn)
         {
-            redLight.SetActive(false);
-            StartCoroutine(dynamicLightOff());
-            Debug.Log("NEED TO OFF");
+            for (int i = 0; i < redLights.Length; i ++)
+            {
+                //redLights[i].SetActive(false);
+                StartCoroutine(dynamicLightOff(i)); // add i
+            }
+            //Debug.Log("NEED TO OFF");
         }
         else
-            redLight.SetActive(true);
-            Debug.Log("NEED TO ON");
+            for (int i = 0; i < redLights.Length; i++)
+            {
+                redLights[i].SetActive(true) ;
+            }
+            //Debug.Log("NEED TO ON");
 
     }
-
-    IEnumerator dynamicLightOff()
+    // FOR GET SOME DELAY
+    IEnumerator dynamicLightOff(int i)
     {
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(0f); // need some adjustment 
+            redLights[i].SetActive(false); // new line
             isOn = true;
-            Debug.Log("IS ON shloud down :" + isOn);
-
     }
 }

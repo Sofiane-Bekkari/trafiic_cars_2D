@@ -5,6 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - RedLight
+  - Tile
+  - CarBlue
+  - CarRed
+  - CarYellow
+  - CarGreen
+  - StationBlue
+  - StationGreen
   layers:
   - Default
   - TransparentFX
